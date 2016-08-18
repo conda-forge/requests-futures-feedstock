@@ -1,7 +1,7 @@
 {%set name = "requests-futures" %}
-{%set version = "0.9.7" %}
+{%set version = "0.9.4" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "a9ca2c3480b6fac29ec5de59c146742e2ab2b60f8c68581766094edb52ea7bad" %}
+{%set hash_val = "2046313d60a3e8bd868adf401694639a7fa963ef42648bb202f077f69d35207a" %}
 
 package:
   name: {{ name }}
