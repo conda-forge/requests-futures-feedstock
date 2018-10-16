@@ -1,25 +1,21 @@
-{%set name = "requests-futures" %}
-{%set version = "0.9.7" %}
-{%set hash_type = "sha256" %}
-{%set hash_val = "a9ca2c3480b6fac29ec5de59c146742e2ab2b60f8c68581766094edb52ea7bad" %}
+{% set version = "0.9.7" %}
 
 package:
-  name: {{ name }}
+  name: requests-futures
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  {{ hash_type }}: {{ hash_val }}
+  url: https://pypi.io/packages/source/r/requests-futures/requests-futures-{{ version }}.tar.gz
+  sha256: a9ca2c3480b6fac29ec5de59c146742e2ab2b60f8c68581766094edb52ea7bad
 
 build:
-  number: 1
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  number: 1001
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
+    - pip
   run:
     - python
     - requests >=1.2.0
@@ -33,7 +29,7 @@ about:
   home: https://github.com/ross/requests-futures
   license: Apache 2.0
   license_file: LICENSE
-  summary: 'Asynchronous Python HTTP for Humans.'
+  summary: 'Asynchronous Python HTTP for Humans'
 
 extra:
   recipe-maintainers:
