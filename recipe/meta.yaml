@@ -1,4 +1,4 @@
-{% set version = "0.9.7" %}
+{% set version = "0.9.8" %}
 
 package:
   name: requests-futures
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/r/requests-futures/requests-futures-{{ version }}.tar.gz
-  sha256: a9ca2c3480b6fac29ec5de59c146742e2ab2b60f8c68581766094edb52ea7bad
+  sha256: 76a22b95723267b53d8cc50e54d00b98d95afa02fd8449501b07a3797f46a96d
 
 build:
-  number: 1001
+  number: 1000
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
 
 requirements:
