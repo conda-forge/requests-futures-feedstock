@@ -1,4 +1,4 @@
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: requests-futures
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/r/requests-futures/requests-futures-{{ version }}.tar.gz
-  sha256: 35547502bf1958044716a03a2f47092a89efe8f9789ab0c4c528d9c9c30bc148
+  sha256: f55a4ef80070e2858e7d1e73123d2bfaeaf25b93fd34384d8ddf148e2b676373
 
 build:
-  number: 2
+  number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
 
 requirements:
   host:
@@ -34,7 +34,7 @@ about:
   home: https://github.com/ross/requests-futures
   license: Apache-2.0
   license_file: LICENSE
-  summary: 'Asynchronous Python HTTP for Humans'
+  summary: Asynchronous Python HTTP for Humans
 
 extra:
   recipe-maintainers:
