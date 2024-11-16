@@ -1,13 +1,13 @@
 {% set name = "requests-futures" %}
-{% set version = "1.0.1" %}
+{% set version = "1.0.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/requests-futures-{{ version }}.tar.gz
-  sha256: f55a4ef80070e2858e7d1e73123d2bfaeaf25b93fd34384d8ddf148e2b676373
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 6b7eb57940336e800faebc3dab506360edec9478f7b22dc570858ad3aa7458da
 
 build:
   noarch: python
