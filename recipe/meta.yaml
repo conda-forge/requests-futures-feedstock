@@ -1,3 +1,4 @@
+{% set python_min = "3.7" %}
 {% set name = "requests-futures" %}
 {% set version = "1.0.2" %}
 
@@ -11,16 +12,16 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation 
   number: 0
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools >=38.6.1
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - requests >=1.2.0
 
 test:
@@ -29,6 +30,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
