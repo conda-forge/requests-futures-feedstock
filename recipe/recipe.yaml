@@ -1,0 +1,46 @@
+schema_version: 1
+
+context:
+  version: "1.1.0"
+
+package:
+  name: requests-futures
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/r/requests-futures/requests_futures-${{ version }}.tar.gz
+  sha256: f839cf536e6638a6e0ca1cfd54ac761bf3bb2b5a7ecf9349557e53acc5244d36
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=77
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - requests >=1.2.0
+
+tests:
+  - python:
+      imports:
+        - requests_futures
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  summary: Asynchronous Python HTTP for Humans.
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/ross/requests-futures
+  repository: https://github.com/ross/requests-futures
+
+extra:
+  recipe-maintainers:
+    - ocefpaf
