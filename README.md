@@ -9,6 +9,8 @@ Package license: Apache-2.0
 
 Summary: Asynchronous Python HTTP for Humans.
 
+Development: https://github.com/ross/requests-futures
+
 Current build status
 ====================
 
@@ -189,5 +191,4 @@ Feedstock Maintainers
 =====================
 
 * [@ocefpaf](https://github.com/ocefpaf/)
-* [@pmlandwehr](https://github.com/pmlandwehr/)
 
